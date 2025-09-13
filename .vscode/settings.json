@@ -1,0 +1,13 @@
+{
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.recipes": [
+
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk_rconly"
+            ]
+        },
+    ],
+    "latex-workshop.latex.recipe.default": "latexmk"
+}

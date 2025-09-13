@@ -1,6 +1,6 @@
 ensure_path( 'TEXINPUTS', './configuration/' );
 $pdf_mode=4;
-$lualatex = 'lualatex  %O  --shell-escape %S';
+$lualatex = 'lualatex  %O -halt-on-error -synctex=1 --shell-escape %S';
 $out_dir = '.';
 $aux_dir = 'build';
 
