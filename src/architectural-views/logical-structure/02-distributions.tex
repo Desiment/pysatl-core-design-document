@@ -1,10 +1,9 @@
 \subsection{Модуль Distributions}
-
 В основе лежит класс \texttt{Distribution}, представленный в виде протокола Python. Это означает, что конкретные классы могут \emph{реализовать} интерфейс \texttt{Distribution}, не наследуясь от общего базового класса. По этой причине почти все поля \texttt{Distribution} экспонируются как свойства (\texttt{@property}); обзор ключевых элементов модуля показан на рис.~\ref{fig:uml-distributions}.
 
-\begin{figure}[htbp]
+\begin{figure}[h]
   \centering
-  \includegraphics[width=\linewidth]{assets/images/Distrs.png}
+  \includegraphics[width=.66\linewidth,trim=4mm 4mm 4mm 4mm,clip]{assets/images/Distrs.png}
   \caption{UML-обзор модуля \texttt{Distributions}: протокол \texttt{Distribution},
   типы \texttt{DistributionType}, стратегии \texttt{SamplingStrategy}/\texttt{ComputationStrategy},
   выборки и базовые реализации по умолчанию.}
@@ -52,9 +51,9 @@
 
 Отдельно выделяется \texttt{ComputationMethod} — абстракция для сложных вычислений, которые не укладываются в сигнатуру вызова \texttt{FittedComputationMethod}. В частности, \texttt{ComputationMethod} намеренно \emph{не} определяет \texttt{fit} как \texttt{\_\_call\_\_}, поскольку его сигнатура отличается. Такое разделение упрощает кэширование и повторное использование результатов.
 
-\begin{figure}[htbp]
+\begin{figure}[h]
   \centering
-  \includegraphics[width=\linewidth]{assets/images/Computation.png}
+  \includegraphics[width=.66\linewidth,trim=4mm 4mm 4mm 4mm,clip]{assets/images/Computation.png}
   \caption{Вычислительная модель: \texttt{Computation}, \texttt{AnalyticalComputation},
   \texttt{FittedComputationMethod} и \texttt{ComputationMethod}; целевая характеристика (\texttt{target}),
   источники (\texttt{sources}) и единый механизм вызова.}
@@ -110,9 +109,9 @@
   \item Поиск маршрута: \texttt{find\_path(source, target)} — стандартный \texttt{BFS} по графу, используемый стратегией по умолчанию и доступный пользователю при реализации собственных стратегий.
 \end{itemize}
 
-\begin{figure}[htbp]
+\begin{figure}[h]
   \centering
-  \includegraphics[width=\linewidth]{assets/images/Register.png}
+  \includegraphics[width=.5\linewidth,trim=4mm 4mm 4mm 4mm,clip]{assets/images/Register.png}
   \caption{Реестр преобразований для типа распределения: \texttt{DistributionTypeRegister}
   и \texttt{GenericCharacteristicRegister} с инвариантами (связность definitive-подграфа,
   отсутствие обратных рёбер из indefinitive).}
